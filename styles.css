@@ -1,0 +1,60 @@
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background: #e8eee9;
+  color: #152b25;
+  font: 1rem/1.5 "Instrument Sans", system-ui, sans-serif;
+}
+main {
+  width: min(100%, 700px);
+  padding: clamp(20px, 5vw, 48px);
+  background: #fffef9;
+  border: 1px solid #cbd9d0;
+  border-radius: 24px;
+  box-shadow: 0 18px 45px #17392a16;
+}
+h1 { margin: 0 0 24px; font-size: clamp(1.8rem, 5vw, 3rem); line-height: 1.1; }
+.fields { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+label { font-weight: 650; }
+.money {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 6px;
+  padding: 10px 12px;
+  border: 1px solid #82998d;
+  border-radius: 10px;
+  background: white;
+}
+.money:focus-within { outline: 2px solid #25694e; outline-offset: 2px; }
+input { width: 100%; min-width: 0; border: 0; outline: 0; font: inherit; color: inherit; }
+button {
+  width: 100%;
+  margin-top: 16px;
+  padding: 12px;
+  border: 0;
+  border-radius: 10px;
+  background: #19543d;
+  color: white;
+  cursor: pointer;
+  font: inherit;
+  font-weight: 700;
+}
+button:hover { background: #113e2d; }
+button:focus-visible { outline: 2px solid #25694e; outline-offset: 3px; }
+#error { color: #912528; }
+section { margin-top: 28px; border-top: 1px solid #cbd9d0; padding-top: 20px; }
+h2 { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px; margin: 0 0 14px; font-size: 1.25rem; }
+.denominations { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 8px; margin: 0; }
+.denominations div { display: flex; flex-direction: column-reverse; justify-content: space-between; padding: 10px 4px; border-radius: 10px; text-align: center; background: #ecf3e9; }
+.denominations span { font-size: .875rem; }
+.denominations p { margin: 0; font-size: 1.4rem; font-weight: 750; overflow-wrap: anywhere; }
+@media (max-width: 500px) {
+  .fields { grid-template-columns: 1fr; }
+  .denominations { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+
